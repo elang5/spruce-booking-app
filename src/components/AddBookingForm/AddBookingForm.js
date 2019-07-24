@@ -66,15 +66,23 @@ export default function AddBookingForm({ handleSubmit, handleFields, fields, isL
             <option value="dogwalk">Dog Walk</option>
           </select>
         </div>
-        <div className="input-cell">
-          <label htmlFor="booking-date">Booking Date</label>
-          <input required type="date" name="bookingdate" id="booking-date" value={fields.bookingdate || ""} onChange={handleFields}/>
-        </div>
-        <div className="input-cell">
-          <label htmlFor="booking-time">Booking Time</label>
-          <input required type="time" name="bookingtime" id="booking-time" value={fields.bookingtime || ""} onChange={handleFields}/>
-        </div>
-      <Loading loading={isLoading} />
+        <FormInput
+            id="booking-date"
+            label="Booking Date"
+            type="date"
+            value={fields.bookingdate || ""}
+            name="bookingdate"
+            handleFields={handleFields}
+        />
+        <FormInput
+            id="booking-time"
+            label="Booking Time"
+            type="time"
+            value={fields.bookingtime || ""}
+            name="bookingtime"
+            handleFields={handleFields}
+        />
+        <Loading loading={isLoading} />
       </div>
       <button type="submit" className="create-booking">
         Create booking

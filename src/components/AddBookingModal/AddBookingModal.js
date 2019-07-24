@@ -21,32 +21,32 @@ export class AddBookingModal extends Component {
   handleSubmit = async e => {
     e.preventDefault()
     const { name, email, address, city, state, zip, bookingtype, bookingdate, bookingtime } = this.state
-    let date = new Date(`${bookingdate}T${bookingtime}:00`)
-    let datetime = date.toISOString()
-    const newBooking = {
-      name, 
-      email,
-      address,
-      city,
-      state,
-      zip,
-      bookingtype,
-      datetime
-    }
     try {
       this.setState({ isLoading: true })
+      let date = new Date(`${bookingdate}T${bookingtime}:00`)
+      let datetime = date.toISOString()
+      const newBooking = {
+        name, 
+        email,
+        address,
+        city,
+        state,
+        zip,
+        bookingtype,
+        datetime
+      }
       await BookingService.postBooking(newBooking)
       const updatedBookings = await BookingService.getBookings()
       this.props.updateBookings(updatedBookings)
       this.props.closeModal()
       this.setState({ isLoading: false })
     } catch(err) {
-      this.setState({ error: err.error })
+      this.setState({ error: err.message, isLoading: false })
     }
   }
 
   render() {
-    const { isLoading } = this.state
+    const { isLoading, error } = this.state
     return (
       <Modal
         className="booking-form-modal"
@@ -56,7 +56,7 @@ export class AddBookingModal extends Component {
         closeTimeoutMS={100}
       >
         <h1>Create booking</h1>
-        {this.state.error && <p>{this.state.error}</p>}
+        {error && <p className="error">{error}</p>}
         <AddBookingForm
           fields={{...this.state}}
           handleSubmit={this.handleSubmit}
