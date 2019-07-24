@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import BookingList from '../BookingList/BookingList'
 import AddBookingModal from '../AddBookingModal/AddBookingModal'
 import BookingService from '../../services/booking-service'
+import Loading from '../Loading/Loading'
 import './App.css';
 
 class App extends Component {
@@ -12,11 +13,13 @@ class App extends Component {
     filteredBookings: [],
     filterOption: 'all',
     modalIsOpen: false,
+    isLoading: false
   }
 
   async componentDidMount() {
+    this.setState({ isLoading: true })
     const bookings = await BookingService.getBookings()
-    this.setState({ bookingList: bookings })
+    this.setState({ bookingList: bookings, isLoading: false })
   } 
 
   openModal = () => {
@@ -49,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    const { bookingList, modalIsOpen, filterOption, filteredBookings } = this.state
+    const { bookingList, modalIsOpen, filterOption, filteredBookings, isLoading } = this.state
     return (
       <div className="App">
         <NavBar />
@@ -57,6 +60,7 @@ class App extends Component {
           handleClick={this.openModal}
           handleFilter={this.handleFilterOptionChange}/>
         <BookingList bookingList={filterOption !== 'all' ? filteredBookings : bookingList} />
+        <Loading loading={isLoading} />
         <AddBookingModal 
           isOpen={modalIsOpen}
           onRequestClose={this.closeModal}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Modal from 'react-modal'
 import AddBookingForm from '../AddBookingForm/AddBookingForm'
 import BookingService from '../../services/booking-service'
+import Loading from '../Loading/Loading'
 import './AddBookingModal.css'
 
 Modal.setAppElement('#root')
@@ -9,7 +10,8 @@ Modal.setAppElement('#root')
 export class AddBookingModal extends Component {
   state = {
     error: null,
-    bookingtype: 'housekeeping'
+    bookingtype: 'housekeeping',
+    isLoading: false
   }
 
   handleFields = e => {
@@ -33,16 +35,19 @@ export class AddBookingModal extends Component {
       datetime
     }
     try {
+      this.setState({ isLoading: true })
       await BookingService.postBooking(newBooking)
       const updatedBookings = await BookingService.getBookings()
       this.props.updateBookings(updatedBookings)
       this.props.closeModal()
+      this.setState({ isLoading: false })
     } catch(err) {
       this.setState({ error: err.error })
     }
   }
 
   render() {
+    const { isLoading } = this.state
     return (
       <Modal
         className="booking-form-modal"
@@ -58,6 +63,7 @@ export class AddBookingModal extends Component {
           handleSubmit={this.handleSubmit}
           handleFields={this.handleFields}
         />
+        <Loading loading={isLoading} />
       </Modal>
     )
   }
