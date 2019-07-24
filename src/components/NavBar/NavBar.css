@@ -1,0 +1,8 @@
+nav.navbar {
+  height: 45px;
+  background: white;
+}
+
+nav > svg {
+  padding: 10px;
+}

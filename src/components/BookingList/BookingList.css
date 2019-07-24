@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+}
+
+.page-numbers {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-numbers > li {
+  text-align: center;
+  width: 18px;
+  margin: 0 5px;
+  background-color: #f29648;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-numbers > li:last-child {
+  margin-right: 20px;
+}
+
+.page-number.active {
+  background-color: white;
+  color: #333333;
+}

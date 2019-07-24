@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BookingListItem from '../BookingItem/BookingItem'
+import './BookingList.css'
 
 export default class BookingListPage extends Component {
   constructor() {
@@ -20,16 +21,17 @@ export default class BookingListPage extends Component {
   }
 
   renderPageNumbers = pageNumbers => {
+    const { currentPage } = this.state
     return pageNumbers.map(number => {
       return (
         <li
           key={number}
           id={number}
           onClick={this.handleClick}
+          className={currentPage === number ? 'page-number active' : 'page-number'}
         >
           {number}
-        </li>
-      )
+        </li>)
     })
   }
 
@@ -46,17 +48,15 @@ export default class BookingListPage extends Component {
       pageNumbers.push(i)
     }
 
-    
-
     return (
-      <>
+      <main className="booking-list-container">
         <ul className="page-numbers">
           {this.renderPageNumbers(pageNumbers)}
         </ul>
-        <ul>
+        <ul className="booking-list">
           {this.renderBookingList(currentBookings)}
         </ul>
-      </>
+      </main>
     )
   }
 }
