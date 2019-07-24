@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookingItem Component renders the UI as expected 1`] = `
+Array [
+  <div
+    className="booking-item cell customer"
+  >
+    
+  </div>,
+  <div
+    className="booking-item cell email"
+  >
+    
+  </div>,
+  <div
+    className="booking-item cell address"
+  >
+    <div
+      className="street"
+    >
+      
+    </div>
+    <div
+      className="city-state-zip"
+    >
+      , , 
+    </div>
+  </div>,
+  <div
+    className="booking-item cell booking-type"
+  >
+    Dog Walk
+  </div>,
+  <div
+    className="booking-item cell booking-time"
+  >
+    Invalid Date
+  </div>,
+]
+`;

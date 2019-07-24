@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import BookingItem from "./BookingItem";
+import Loading from "./Loading";
 import renderer from "react-test-renderer";
 
-describe("BookingItem Component", () => {
+describe("Loading Component", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(< BookingItem />, div);
+    ReactDOM.render(< Loading />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it("renders the UI as expected", () => {
     const tree = renderer
-      .create(<BookingItem/>)
+      .create(<Loading/>)
       .toJSON();
     expect(tree).toMatchSnapshot();  
   });

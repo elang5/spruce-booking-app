@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import NavBar from '../NavBar/NavBar'
-import Header from '../Header/Header'
-import BookingList from '../BookingList/BookingList'
-import AddBookingModal from '../AddBookingModal/AddBookingModal'
-import BookingService from '../../services/booking-service'
-import Loading from '../Loading/Loading'
-import './App.css';
+import React, { Component } from "react";
+import NavBar from "../NavBar/NavBar"
+import Header from "../Header/Header"
+import BookingList from "../BookingList/BookingList"
+import AddBookingModal from "../AddBookingModal/AddBookingModal"
+import BookingService from "../../services/booking-service"
+import Loading from "../Loading/Loading"
+import "./App.css";
 
 class App extends Component {
   state = {
     bookingList: [],
     filteredBookings: [],
-    filterOption: 'all',
+    filterOption: "all",
     modalIsOpen: false,
     isLoading: false
   }
@@ -37,14 +37,14 @@ class App extends Component {
   handleFilterOptionChange = e => {
     const { value } = e.target
     this.setState({ filterOption: value })
-    if (value === 'housekeeping') {
+    if (value === "housekeeping") {
       let filteredBookings = this.state.bookingList
-      filteredBookings = filteredBookings.filter(booking => booking.bookingtype === 'housekeeping')
+      filteredBookings = filteredBookings.filter(booking => booking.bookingtype === "housekeeping")
       this.setState({ filteredBookings })
     }
-    if (value === 'dogwalk') {
+    if (value === "dogwalk") {
       let filteredBookings = this.state.bookingList
-      filteredBookings =  filteredBookings.filter(booking => booking.bookingtype === 'dogwalk')
+      filteredBookings =  filteredBookings.filter(booking => booking.bookingtype === "dogwalk")
       this.setState({ filteredBookings })
       return
     }
@@ -59,7 +59,7 @@ class App extends Component {
         <Header 
           handleClick={this.openModal}
           handleFilter={this.handleFilterOptionChange}/>
-        <BookingList bookingList={filterOption !== 'all' ? filteredBookings : bookingList} />
+        <BookingList bookingList={filterOption !== "all" ? filteredBookings : bookingList} />
         <Loading loading={isLoading} />
         <AddBookingModal 
           isOpen={modalIsOpen}

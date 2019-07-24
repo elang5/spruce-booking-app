@@ -12,6 +12,11 @@
   opacity: 0;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 .booking-form-modal {
   width: 60%;
   height: 47%;

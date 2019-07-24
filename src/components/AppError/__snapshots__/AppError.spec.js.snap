@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppError Component renders the UI as expected 1`] = `
+<div
+  className="error"
+>
+  <h1>
+    Oh no! There was an error. We will get this fixed ASAP!
+  </h1>
+</div>
+`;

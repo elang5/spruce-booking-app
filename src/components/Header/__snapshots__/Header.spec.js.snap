@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component renders the UI as expected 1`] = `
+<header
+  role="banner"
+>
+  <h1>
+    Bookings
+  </h1>
+  <select
+    className="filter-options"
+    id="filter"
+    name="filter-options"
+    onChange={[Function]}
+  >
+    <option
+      value="all"
+    >
+      All
+    </option>
+    <option
+      value="housekeeping"
+    >
+      Housekeeping
+    </option>
+    <option
+      value="dogwalk"
+    >
+      Dog Walk
+    </option>
+  </select>
+  <button
+    className="create-booking"
+  >
+    Create booking
+  </button>
+</header>
+`;
