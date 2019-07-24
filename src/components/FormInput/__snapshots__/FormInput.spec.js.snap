@@ -6,12 +6,11 @@ exports[`FormInput Component renders the UI as expected 1`] = `
 >
   <label
     htmlFor=""
-  >
-    
-  </label>
+  />
   <input
     id=""
     name=""
+    onChange={[Function]}
     required={true}
     type=""
   />

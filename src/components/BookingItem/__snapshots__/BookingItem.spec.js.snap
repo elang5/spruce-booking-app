@@ -29,7 +29,7 @@ Array [
   <div
     className="booking-item cell booking-type"
   >
-    
+    Dog Walk
   </div>,
   <div
     className="booking-item cell booking-time"

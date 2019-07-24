@@ -19,6 +19,8 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <input
         id="name"
         name="name"
+        onChange={[Function]}
+        required={true}
         type="text"
         value=""
       />
@@ -34,6 +36,8 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <input
         id="email"
         name="email"
+        onChange={[Function]}
+        required={true}
         type="text"
         value=""
       />
@@ -44,11 +48,13 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <label
         htmlFor="address"
       >
-        Street Address
+        Address
       </label>
       <input
         id="address"
         name="address"
+        onChange={[Function]}
+        required={true}
         type="text"
         value=""
       />
@@ -64,6 +70,8 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <input
         id="city"
         name="city"
+        onChange={[Function]}
+        required={true}
         type="text"
         value=""
       />
@@ -82,6 +90,8 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
         <input
           id="state"
           name="state"
+          onChange={[Function]}
+          required={true}
           type="text"
           value=""
         />
@@ -97,7 +107,9 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
         <input
           id="zip"
           name="zip"
-          type="number"
+          onChange={[Function]}
+          required={true}
+          type="text"
           value=""
         />
       </div>
@@ -143,6 +155,7 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <input
         id="booking-date"
         name="bookingdate"
+        onChange={[Function]}
         required={true}
         type="date"
         value=""
@@ -159,6 +172,7 @@ exports[`AddBookingForm Component renders the UI as expected 1`] = `
       <input
         id="booking-time"
         name="bookingtime"
+        onChange={[Function]}
         required={true}
         type="time"
         value=""

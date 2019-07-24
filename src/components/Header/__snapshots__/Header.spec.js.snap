@@ -12,7 +12,6 @@ exports[`Header Component renders the UI as expected 1`] = `
     id="filter"
     name="filter-options"
     onChange={[Function]}
-    value="all"
   >
     <option
       value="all"
