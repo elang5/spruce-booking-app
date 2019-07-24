@@ -57,3 +57,17 @@ export default function AddBookingForm({ handleSubmit, handleFields, fields, isL
     </form>
   )
 }
+
+AddBookingForm.defaultProps = {
+  fields: {
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    bookingtype: "",
+    bookingdate: "",
+    bookingtime: ""
+  }
+}

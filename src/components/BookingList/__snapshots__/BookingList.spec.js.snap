@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookingList Component renders the UI as expected 1`] = `
+<main
+  role="main"
+>
+  <ul
+    className="page-numbers"
+  />
+  <section
+    className="booking-list-container"
+  >
+    <div
+      className="heading cell"
+    >
+      Customer
+    </div>
+    <div
+      className="heading cell"
+    >
+      Email
+    </div>
+    <div
+      className="heading cell"
+    >
+      Address
+    </div>
+    <div
+      className="heading cell"
+    >
+      Booking Type
+    </div>
+    <div
+      className="heading cell datetime"
+    >
+      Booking Date/Time
+    </div>
+  </section>
+</main>
+`;

@@ -26,3 +26,7 @@ export default function Header(props) {
     </header>
   )
 }
+
+Header.defaultProps = {
+  filterOption: 'all',
+}

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput Component renders the UI as expected 1`] = `
+<div
+  className="input-cell"
+>
+  <label
+    htmlFor=""
+  >
+    
+  </label>
+  <input
+    id=""
+    name=""
+    required={true}
+    type=""
+  />
+</div>
+`;

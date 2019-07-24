@@ -2,7 +2,7 @@ import React from 'react'
 import formatDateTime from '../../Utils/Utils'
 import './BookingItem.css'
 
-export default function BookingListItem({ booking }) {
+export default function BookingItem({ booking }) {
   return (
     <React.Fragment>
       <div className='booking-item cell customer'>
@@ -27,4 +27,17 @@ export default function BookingListItem({ booking }) {
       </div>
     </React.Fragment>
   )
+}
+
+BookingItem.defaultProps = {
+  booking: {
+    name: '',
+    email: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    bookingtype: '',
+    datetime: ''
+  }
 }

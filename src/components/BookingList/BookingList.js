@@ -3,6 +3,10 @@ import BookingListItem from '../BookingItem/BookingItem'
 import './BookingList.css'
 
 export default class BookingListPage extends Component {
+  static defaultProps = {
+    bookingList: []
+  }
+  
   constructor() {
     super()
     this.state = {
@@ -65,3 +69,5 @@ export default class BookingListPage extends Component {
     )
   }
 }
+
+

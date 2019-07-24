@@ -4,7 +4,7 @@ import AddBookingForm from '../AddBookingForm/AddBookingForm'
 import BookingService from '../../services/booking-service'
 import './AddBookingModal.css'
 
-Modal.setAppElement('#root')
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 export class AddBookingModal extends Component {
   state = {
