@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Modal from 'react-modal'
 import AddBookingForm from '../AddBookingForm/AddBookingForm'
 import BookingService from '../../services/booking-service'
-import Loading from '../Loading/Loading'
 import './AddBookingModal.css'
 
 Modal.setAppElement('#root')
@@ -62,8 +61,8 @@ export class AddBookingModal extends Component {
           fields={{...this.state}}
           handleSubmit={this.handleSubmit}
           handleFields={this.handleFields}
+          isLoading={isLoading}
         />
-        <Loading loading={isLoading} />
       </Modal>
     )
   }

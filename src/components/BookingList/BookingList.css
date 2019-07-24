@@ -1,0 +1,59 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-numbers {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.page-numbers > li {
+  text-align: center;
+  width: 18px;
+  margin: 0 5px;
+  background-color: #f29648;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-numbers > li:last-child {
+  margin-right: 20px;
+}
+
+.page-number:hover {
+  background-color: #f4a866;
+}
+
+.page-number.active {
+  background-color: white;
+  color: #333333;
+}
+
+.headings {
+  padding: 5px; 
+  margin: 0 5px;
+}
+
+.booking-list-container {
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(min-content, 1fr));
+  row-gap: 2px;
+  margin-bottom: 15px;
+}
+
+.heading.cell.datetime {
+  text-align: right;
+}
+
+.cell {
+  grid-column: span 2;
+  white-space: nowrap;
+  padding: 8px;
+}

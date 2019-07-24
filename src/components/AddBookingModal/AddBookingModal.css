@@ -5,8 +5,32 @@
 
 .ReactModal__Overlay--after-open{
   opacity: 1;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .ReactModal__Overlay--before-close{
   opacity: 0;
+}
+
+.booking-form-modal {
+  width: 60%;
+  height: 47%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  background: white;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 0 20px;
+}
+
+.booking-form-modal:focus {
+  outline: none !important;
+}
+
+.booking-form-modal > h1 {
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 1.92px;
 }

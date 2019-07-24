@@ -1,0 +1,18 @@
+.booking-item {
+  background: white;
+  font-size: 12px;
+}
+
+.address {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.street {
+  margin-bottom: 4px;
+}
+
+.booking-item.booking-time {
+  text-align: right;
+  padding-right: 10px;
+}
