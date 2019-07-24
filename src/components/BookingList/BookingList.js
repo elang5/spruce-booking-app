@@ -49,13 +49,18 @@ export default class BookingListPage extends Component {
     }
 
     return (
-      <main className="booking-list-container">
+      <main role="main">
         <ul className="page-numbers">
           {this.renderPageNumbers(pageNumbers)}
         </ul>
-        <ul className="booking-list">
+        <section className="booking-list-container">
+          <div className="heading cell">Customer</div>
+          <div className="heading cell">Email</div>
+          <div className="heading cell">Address</div>
+          <div className="heading cell">Booking Type</div>
+          <div className="heading cell datetime">Booking Date/Time</div>
           {this.renderBookingList(currentBookings)}
-        </ul>
+        </section>
       </main>
     )
   }

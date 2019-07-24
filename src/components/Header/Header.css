@@ -20,8 +20,8 @@ header > h1 {
 }
 
 .create-booking, .filter-options {
-  cursor: pointer;
   transition: .3s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
 .create-booking:focus, .filter-options:focus {
@@ -33,7 +33,6 @@ header > h1 {
   width: 128px;
   height: 29px;
   border-radius: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   background-color: #f29648;
   border: none;
   font-size: 13px;

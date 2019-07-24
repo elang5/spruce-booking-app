@@ -1,24 +1,30 @@
 import React from 'react'
-import BookingSpan from '../BookingSpan/BookingSpan'
+import formatDateTime from '../../Utils/Utils'
+import './BookingItem.css'
 
 export default function BookingListItem({ booking }) {
   return (
-    <li className="booking-item">
-      <BookingSpan 
-        className='customer'
-        type={booking.name} />
-      <BookingSpan 
-        className='email'
-        type={booking.email} />
-      <BookingSpan 
-        className='address' 
-        type={`${booking.address} ${booking.city}, ${booking.state}, ${booking.zip}`} />
-      <BookingSpan 
-        className='booking-type'
-        type={booking.bookingtype} />
-      <BookingSpan 
-        className='booking-time'
-        type={booking.datetime} />
-    </li>
+    <React.Fragment>
+      <div className='booking-item cell customer'>
+        {booking.name}
+      </div>
+      <div className='booking-item cell email'>
+        {booking.email}
+      </div>
+      <div className='booking-item cell address' >
+        <div className="street">
+          {booking.address}
+        </div>
+        <div className="city-state-zip">
+          {`${booking.city}, ${booking.state}, ${booking.zip}`}
+        </div>
+      </div> 
+      <div className='booking-item cell booking-type'>
+        {booking.bookingtype} 
+      </div>
+      <div className='booking-item cell booking-time'>
+        {formatDateTime(booking.datetime)}
+      </div>
+    </React.Fragment>
   )
 }

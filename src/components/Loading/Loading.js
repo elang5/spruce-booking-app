@@ -1,13 +1,18 @@
-import { StageSpinner } from 'react-spinners-kit'
-
 import React from 'react'
+import { StageSpinner } from 'react-spinners-kit'
+import './Loading.css'
+
 
 export default function Loading(props) {
   return (
-    <StageSpinner
-      size={50}
-      color="grey"
-      loading={props.loading}
-    />
+    <div className="loading-container">
+      <StageSpinner
+        className={props.className}
+        size={50}
+        color="grey"
+        loading={props.loading}
+        style={props.style}
+      />
+    </div>
   )
 }
