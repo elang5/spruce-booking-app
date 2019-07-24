@@ -1,6 +1,6 @@
-import React from 'react'
-import { StageSpinner } from 'react-spinners-kit'
-import './Loading.css'
+import React from "react"
+import { StageSpinner } from "react-spinners-kit"
+import "./Loading.css"
 
 
 export default function Loading(props) {
@@ -17,6 +17,6 @@ export default function Loading(props) {
 }
 
 Loading.defaultProps = {
-  className: '',
+  className: "",
   loading: false
 }

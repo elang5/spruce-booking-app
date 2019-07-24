@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Loading from './Loading';
-import renderer from 'react-test-renderer';
+import React from "react";
+import ReactDOM from "react-dom";
+import Loading from "./Loading";
+import renderer from "react-test-renderer";
 
-describe('Loading Component', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
+describe("Loading Component", () => {
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
     ReactDOM.render(< Loading />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('renders the UI as expected', () => {
+  it("renders the UI as expected", () => {
     const tree = renderer
       .create(<Loading/>)
       .toJSON();

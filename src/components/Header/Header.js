@@ -1,5 +1,5 @@
-import React from 'react'
-import './Header.css'
+import React from "react"
+import "./Header.css"
 
 export default function Header(props) {
   return (
@@ -25,8 +25,4 @@ export default function Header(props) {
       </button>
     </header>
   )
-}
-
-Header.defaultProps = {
-  filterOption: 'all',
 }

@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import Modal from 'react-modal'
-import AddBookingForm from '../AddBookingForm/AddBookingForm'
-import BookingService from '../../services/booking-service'
-import './AddBookingModal.css'
+import React, { Component } from "react"
+import Modal from "react-modal"
+import AddBookingForm from "../AddBookingForm/AddBookingForm"
+import BookingService from "../../services/booking-service"
+import "./AddBookingModal.css"
 
-if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== "test") Modal.setAppElement("#root");
 
 export class AddBookingModal extends Component {
   state = {
     error: null,
-    bookingtype: 'housekeeping',
+    bookingtype: "housekeeping",
     isLoading: false
   }
 
@@ -52,7 +52,7 @@ export class AddBookingModal extends Component {
         className="booking-form-modal"
         isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
-        contentLabel={'Create booking'}
+        contentLabel={"Create booking"}
         closeTimeoutMS={100}
       >
         <h1>Create booking</h1>

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import BookingListItem from '../BookingItem/BookingItem'
-import './BookingList.css'
+import React, { Component } from "react"
+import BookingListItem from "../BookingItem/BookingItem"
+import "./BookingList.css"
 
 export default class BookingListPage extends Component {
   static defaultProps = {
@@ -32,7 +32,7 @@ export default class BookingListPage extends Component {
           key={number}
           id={number}
           onClick={this.handleClick}
-          className={currentPage === number ? 'page-number active' : 'page-number'}
+          className={currentPage === number ? "page-number active" : "page-number"}
         >
           {number}
         </li>)
