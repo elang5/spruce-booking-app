@@ -27,6 +27,10 @@ class App extends Component {
     this.setState({ modalIsOpen: false })
   }
 
+  updateBookings = (updatedBookings) => {
+    this.setState({ bookingList: updatedBookings })
+  }
+
   handleFilterOptionChange = e => {
     const { value } = e.target
     this.setState({ filterOption: value })
@@ -56,6 +60,8 @@ class App extends Component {
         <AddBookingModal 
           isOpen={modalIsOpen}
           onRequestClose={this.closeModal}
+          updateBookings={this.updateBookings}
+          closeModal={this.closeModal}
         />
       </div>
     );

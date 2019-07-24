@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Modal from 'react-modal'
 import AddBookingForm from '../AddBookingForm/AddBookingForm'
 import BookingService from '../../services/booking-service'
-import moment from 'moment'
 import './AddBookingModal.css'
 
 Modal.setAppElement('#root')
@@ -10,12 +9,7 @@ Modal.setAppElement('#root')
 export class AddBookingModal extends Component {
   state = {
     error: null,
-    bookingtype: 'housekeeping',
-    isEditing: true
-  }
-
-  componentDidMount() {
-    this.setState({ isEditing: true })
+    bookingtype: 'housekeeping'
   }
 
   handleFields = e => {
@@ -40,7 +34,9 @@ export class AddBookingModal extends Component {
     }
     try {
       await BookingService.postBooking(newBooking)
-      this.setState({ isEditing: false })
+      const updatedBookings = await BookingService.getBookings()
+      this.props.updateBookings(updatedBookings)
+      this.props.closeModal()
     } catch(err) {
       this.setState({ error: err.error })
     }
@@ -50,7 +46,7 @@ export class AddBookingModal extends Component {
     return (
       <Modal
         className="booking-form-modal"
-        isOpen={!this.state.isEditing ? false : this.props.isOpen}
+        isOpen={this.props.isOpen}
         onRequestClose={this.props.onRequestClose}
         contentLabel={'Create booking'}
         closeTimeoutMS={100}
