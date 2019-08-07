@@ -23,8 +23,7 @@ export class AddBookingModal extends Component {
     const { name, email, address, city, state, zip, bookingtype, bookingdate, bookingtime } = this.state
     try {
       this.setState({ isLoading: true })
-      let date = new Date(`${bookingdate}T${bookingtime}:00`)
-      let datetime = date.toISOString()
+      const datetime = `${bookingdate} ${bookingtime}:00`
       const newBooking = {
         name, 
         email,
